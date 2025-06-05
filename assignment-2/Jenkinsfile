@@ -1,7 +1,7 @@
 pipeline {
     agent any
     tools {
-        maven 'Maven3.9.9'
+        maven 'Maven_3.9.9'
     }
     environment {
         GIT_REPO = 'https://github.com/Taneeshq2002/Jenkins-projects.git'
