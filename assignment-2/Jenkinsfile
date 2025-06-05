@@ -1,21 +1,16 @@
 pipeline {
     agent any
-    tools {
-        maven 'Maven_3.9.9'
-    }
-    environment {
-        GIT_REPO = 'https://github.com/Taneeshq2002/Jenkins-projects.git'
-    }
+
     stages {
-        stage('Clone Repo') {
+        stage('Checkout') {
             steps {
-                git branch: 'main', url: "${env.GIT_REPO}"
+                git 'https://github.com/Taneeshq2002/Jenkins-projects.git'
             }
         }
 
         stage('Build with Maven') {
             steps {
-                sh 'mvn clean install'
+                sh '/opt/maven/bin/mvn clean install'
             }
         }
     }
