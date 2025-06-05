@@ -1,0 +1,50 @@
+Started by user Taneeshq Cholekar
+Obtained assignment-1/Jenkinsfile from git https://github.com/Taneeshq2002/Jenkins-projects.git
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins in /var/jenkins_home/workspace/assignment-1
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Checkout SCM)
+[Pipeline] checkout
+Selected Git installation does not exist. Using Default
+The recommended git tool is: NONE
+No credentials specified
+Cloning the remote Git repository
+Cloning repository https://github.com/Taneeshq2002/Jenkins-projects.git
+ > git init /var/jenkins_home/workspace/assignment-1 # timeout=10
+Fetching upstream changes from https://github.com/Taneeshq2002/Jenkins-projects.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.39.5'
+ > git fetch --tags --force --progress -- https://github.com/Taneeshq2002/Jenkins-projects.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url https://github.com/Taneeshq2002/Jenkins-projects.git # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+Avoid second fetch
+ > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+Checking out Revision eadf05e4fc0a7e562421c0ecf2ae2ff59200973b (refs/remotes/origin/main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f eadf05e4fc0a7e562421c0ecf2ae2ff59200973b # timeout=10
+Commit message: "Assigment-1"
+First time build. Skipping changelog.
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (print_variables)
+[Pipeline] echo
+IS_READ_NEV_VARABLES = true
+[Pipeline] echo
+DB_NAME = my_sql_db
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS
