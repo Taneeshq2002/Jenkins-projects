@@ -1,14 +1,22 @@
-node {
-    stage('Checkout Code') {
-        // Replace with your actual GitHub repo URL
-        git url: 'https://github.com/Taneeshq2002/Jenkins-projects.git', branch: 'main'
+pipeline {
+    agent any
+    tools {
+        maven 'Maven3.9.9'
     }
+    environment {
+        GIT_REPO = 'https://github.com/Taneeshq2002/Jenkins-projects.git'
+    }
+    stages {
+        stage('Clone Repo') {
+            steps {
+                git branch: 'main', url: "${env.GIT_REPO}"
+            }
+        }
 
-    stage('Build with Maven') {
-        // Replace 'Maven_3.8.8' with the name you configured in Global Tool Configuration
-        def mvnHome = tool name: 'Maven_3.9.9', type: 'maven'
-
-        // Run Maven build
-        sh "${mvnHome}/bin/mvn clean install"
+        stage('Build with Maven') {
+            steps {
+                sh 'mvn clean install'
+            }
+        }
     }
 }
